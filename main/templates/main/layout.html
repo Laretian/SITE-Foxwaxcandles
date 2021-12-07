@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name='viewport' content='width=device-width,initial-scale=1'/>
+        <meta content='true' name='HandheldFriendly'/>
+        <meta content='width' name='MobileOptimized'/>
+        <meta content='yes' name='apple-mobile-web-app-capable'/>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'main/scss/main.css' %}">
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="container overflow-hidden">{% include 'main/header.html' %}</div>
+            </div>
+        </header>
+        <main>
+            <div class="body">
+                <div class="container overflow-hidden">{% block content %}{% endblock %}</div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <div class="container overflow-hidden">{% include 'main/footer.html' %}</div>
+            </div>
+        </footer>
+    </body>
+</html>
